@@ -9208,6 +9208,11 @@ h1.navbar-brand a:hover {
 .gallery-caption {
   display: block; }
 
+nav a {
+  color: green !important; }
+  nav a:hover {
+    color: #7852B2 !important; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

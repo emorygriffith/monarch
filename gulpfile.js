@@ -18,7 +18,7 @@ var browserSyncWatchFiles = [
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
-    proxy: "localhost/wordpress/",
+    proxy: "localhost:8888",
     notify: false
 };
 
@@ -112,11 +112,11 @@ gulp.task('watch', function () {
 // Minifies CSS files
 gulp.task('cssnano', function(){
   return gulp.src('./css/theme.css')
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(plumber())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cssnano({discardComments: {removeAll: true}}))
-    .pipe(sourcemaps.write('./'))
+   .pipe(sourcemaps.init({loadMaps: true}))
+   .pipe(plumber())
+   .pipe(rename({suffix: '.min'}))
+   .pipe(cssnano({discardComments: {removeAll: true}}))
+   .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css/'))
 });
 
@@ -138,11 +138,11 @@ gulp.task('browser-sync', function() {
 // Run:
 // gulp watch-bs
 // Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
-gulp.task('watch-bs', ['browser-sync', 'watch', 'cssnano', 'scripts'], function () { });
+gulp.task('watch-bs', ['browser-sync', 'watch', 'scripts'], function () { });
 
 
-// Run: 
-// gulp scripts. 
+// Run:
+// gulp scripts.
 // Uglifies and concat all JS files into one
 gulp.task('scripts', function() {
     var scripts = [
@@ -181,7 +181,7 @@ gulp.task('copy-assets', ['clean-source'], function() {
 // Copy all Bootstrap JS files
     var stream = gulp.src(basePaths.node + 'bootstrap/dist/js/**/*.js')
        .pipe(gulp.dest(basePaths.dev + '/js/bootstrap4'));
-  
+
 
 // Copy all Bootstrap SCSS files
     gulp.src(basePaths.node + 'bootstrap/scss/**/*.scss')
