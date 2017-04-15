@@ -11,40 +11,28 @@ $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<?php get_sidebar( 'footerfull' ); ?>
-
-<div class="wrapper" id="wrapper-footer">
-
-	<div class="<?php echo esc_html( $container ); ?>">
-
 		<div class="row">
-
-			<div class="col-md-12">
-
-				<footer class="site-footer" id="colophon">
-
-					<div class="site-info">
-						<a href="<?php echo esc_url( __( 'http://wordpress.org/','understrap' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'understrap' ),'WordPress' ); ?></a>
-						<span class="sep"> | </span>
-						<?php printf( // WPCS: XSS ok.
-							esc_html__( 'Theme: %1$s by %2$s.', 'understrap' ), $the_theme->get( 'Name' ),
-						'<a href="http://understrap.com/">understrap.com</a>' ); ?>
-						(<?php printf( // WPCS: XSS ok.
-							esc_html__( 'Version: %1$s', 'understrap' ), $the_theme->get( 'Version' ) ); ?>)
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
+			<div class="col-lg-4 col-md-4">
+				<li>List 1</li>
+				<li>List 2</li>
+				<li>List 3</li>
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<li>List 1</li>
+				<li>List 2</li>
+				<li>List 3</li>
+			</div>
+			<div class="col-lg-4 col-md-4">
+				<li>List 1</li>
+				<li>List 2</li>
+				<li>List 3</li>
+			</div>
 		</div><!-- row end -->
 
-	</div><!-- container end -->
 
-</div><!-- wrapper end -->
+</div><!-- #page this is opened in the header-->
 
-</div><!-- #page -->
-
+<!-- Keep this wp_footer() here to pull in scripts at the end of the page -->
 <?php wp_footer(); ?>
 
 </body>
